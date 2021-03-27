@@ -1,4 +1,4 @@
-
+## creates a special matrix list object that can cache its inverse
 CacheMatrix <- function(x = matrix()) {
   a <- NULL
   set <- function(y){
@@ -10,6 +10,9 @@ CacheMatrix <- function(x = matrix()) {
   TogetInverse <- function() a
   list(set = set, get = get,   TosetInverse = TosetInverse, TogetInverse = TogetInverse )
 }
+
+## This function computes the inverse of the special "matrix" returned by CacheMatrix above. 
+##If the inverse has already been calculated, then the cachesolve should retrieve the inverse from the cache.
 
 cacheSolve <- function(x, ...) {
 
